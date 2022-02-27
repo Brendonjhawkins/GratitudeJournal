@@ -1,0 +1,28 @@
+{% extends "entries/base.html" %}
+
+{% block content %}
+    <article>
+        <h2>{{ entry.date_created|date:'Y-m-d H:i' }}</h2>
+        <h3>{{ entry.title }}</h3>
+        <p>
+            Goals I envision:</br>
+            {{ entry.goals }}
+        </p>
+        <p>
+            Improvements I seek:</br>
+            {{ entry.improvements }}</p>
+        <p>
+            Today, I am grateful for:</br>
+            {{ entry.grateful }}</p>
+        <p>
+            Learnings from today:</br>
+            {{ entry.learnings }}</p>
+        <p>
+            I am Feeling:</br>
+            {{ entry.feeling }}</p>
+    </article>
+    <p>
+        <a href="{% url 'entry-update' entry.id %}">✍️ Edit</a>
+        <a href="{% url 'entry-delete' entry.id %}">⛔ Delete</a>
+    </p>
+{% endblock %}

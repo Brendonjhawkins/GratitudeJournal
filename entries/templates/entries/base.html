@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>Affirmed</title>
+    <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+</head>
+
+<body class="dark-mode">
+    <div class="Heading"> 
+    <div class="Welcome">
+       <h1><a class="hello" href="/">Hi {{ user.username }} </a></h1>
+    </div>
+    <div class="Logout-button">
+        <a class="dark" onclick="myFunction()">☀️ /🌙</a>
+       <a class="log" href="{% url 'admin:logout' %}">Logout</a>
+    </div>
+    </div>
+    <div class="Content">
+    <div class="affirmations">
+        <h2> Affirmations </h2>
+        <p>
+            My potential to succeed is infinite.</br>
+            I take pride in the progress I make each day.</br>
+            I am proud of myself and all that I have accomplished.</br>
+            I respect and treat myself with kindness and love.</br>
+            People like me, and feel good about myself.</br>
+            The world is a better place with me in it.</br>
+            I go for goals with passion and pride.</br>
+            I am never a burden.</br>
+            I am worthy of greatness.</br>
+            I am smart, capable and valuable.</br>
+            I am at peace with myself.</br>
+            I accept myself as I am.</br>
+            I am unique in my own wonderful way.</br>
+            I am focused, persistent and will never quit.</br>
+            I am in charge of my own happiness.</br>
+            I have the power to create change.</br>
+            I take pride in my achievements.</br>
+            I have courage and confidence.</br>
+            I can get through anything.</br>
+            I don't need to be perfect.</br>
+            I am an amazing person.</br>
+            I love myself.</br>
+            <!-- I can do anything.</br>
+            I can make a difference.</br>
+            I am in charge of my life.</br>
+            I set goals and I reach them.</br>
+            Today, I will walk through my fears.</br>
+            I am proud of my own success.</br>
+            I celebrate my individuality.</br>
+            I am my own superhero.</br>
+            I am free to be myself.</br>
+            I trust myself.</br>
+            I am enough.</br>
+            I am whole.</br>
+            I live each day to the fullest.</br> -->
+        </p>
+    </div>
+    <div class="EntStyle">
+        <h2 class="Grateful">Share Your Gratitude</h2>
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li class="message">
+                    {{ message }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+    {% block content %}{% endblock %}
+
+    
+</div>
+</div>
+
+<script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% extends "entries/base.html" %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+            <!-- <label for="id_title">Title:</label>
+            <input id="id_title" type="text" name="title" maxlength="100" required>
+       
+        
+            <label for="id_goals">Goals I envision:</label>
+            <textarea  name="goals" id="id_goals" cols="40" rows="10" ></textarea>
+       
+        
+            <label for="id_improvements">Improvements I seek:</label>
+            <textarea  name="improvements" id="id_improvements" cols="40" rows="10" ></textarea>
+       
+        
+            <label for="id_grateful">Today, I am grateful for:</label>
+            <textarea  name="grateful" id="id_grateful" cols="40" rows="10" ></textarea>
+       
+        
+            <label for="id_learnings">Learnings from today:</label>
+            <textarea  name="learnings" id="id_learnings" cols="40" rows="10" ></textarea>
+       
+        
+            <label for="id_feeling">I am Feeling:</label>
+            <textarea  name="feelings" id="id_feeling" cols="40" rows="10" ></textarea> --->
+       
+        <input type="submit" value="Save">
+    </form>
+    
+    {% if entry %}
+        <a href="{% url 'entry-detail' entry.id %}">
+            <button>Cancel</button>
+        </a>
+    {% else %}
+        <a href="{% url 'entry-list' %}">
+            <button>Cancel</button>
+        </a>
+    {% endif %}
+{% endblock %}
