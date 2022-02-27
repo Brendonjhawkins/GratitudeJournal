@@ -26,6 +26,8 @@ Finally, run the local Django development server:
 ```sh
 $ python manage.py runserver
 ```
+### Note:
+When you log in it will direct you to the Django admin interface; change the url to the root adress by removing /admin.
 
 ## To-DO
 - Custom Color Options
