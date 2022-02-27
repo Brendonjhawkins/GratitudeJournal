@@ -27,6 +27,11 @@ Finally, run the local Django development server:
 $ python manage.py runserver
 ```
 
+## To-DO
+- Custom Color Options
+- Mood Tracker(Bacend & Frontend)
+- Change labels of form
+
 ## License
 
 Distributed under the MIT license.
