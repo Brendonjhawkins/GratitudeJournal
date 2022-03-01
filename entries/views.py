@@ -26,13 +26,13 @@ class EntryDetailView(LockedView, DetailView):
 
 class EntryCreateView(LockedView, SuccessMessageMixin, CreateView):
     model = Entry
-    fields = ["title", "goals", "improvements", "learnings"]
+    fields = ["title", "goals", "improvements", "grateful"]
     success_url = reverse_lazy("entry-list")
     success_message = "Your new entry was created!"
 
 class EntryUpdateView(LockedView, SuccessMessageMixin, UpdateView):
     model = Entry
-    fields = ["title", "goals", "improvements", "learnings"]
+    fields = ["title", "goals", "improvements", "grateful"]
     # label = ['title', 'Goals I envision:', 'Improvements I seek:', 'Today, I am grateful for:', 'Learnings from today:', 'I am Feeling']
     success_message = "Your entry was updated!"
 
